@@ -1,4 +1,5 @@
 // Assignment Code
+
 // var generatePassword = document.querySelector("#generate");
 
 // function generatePassword() {
@@ -21,7 +22,7 @@ var passwordchoice = "";
       alert("Password must be at least 8 characters and no more than 128 characters");
       return; 
     } 
-}
+   } 
 
 var confirmUpperCase = confirm("Would you like uppercase letters?"); 
   if (confirmUpperCase) {
@@ -51,6 +52,7 @@ var confirmSymbols = confirm("Would you like symbols?");
     passwordchoice
   }
 
+
 if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSymbols) {
   alert("You are required to pick a field of charcter");
 }
@@ -60,13 +62,12 @@ for (var i = 0; i < characters; i++) {
   password =+ passwordchoice[Math.floor(Math.random() * passwordchoice.length)];
 }
 
-
 console.log(passwordchoice);
 
 // Write password to the #password input
 function writePassword() {
-
   var password = generatePassword();
+
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
