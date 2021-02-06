@@ -1,19 +1,14 @@
 // Assignment Code
+// var generatePassword = document.querySelector("#generate");
+
+// function generatePassword() {
+
 var generateBtn = document.querySelector("#generate");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
 var lowercase = "abcdefghijklmnopqrstuvwxyz".split();
 var numbers = "1234567890".split();
-var symbols = "!#$%&'()*+,-./:;<=]>?@[^_`{|}~".split();
+var symbols = "!#$%&'()<=^_`{|}~*+]>?@[,-./:;".split();
 var passwordchoice = "";
-
-// Write password to the #password input
-function writePassword() {
-
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
 
   function userpasswordOptions(){
     var passLength = parseInt(window.prompt("How long would you like your password to be?"));
@@ -28,7 +23,7 @@ function writePassword() {
     } 
 }
 
-var confirmUpperCase = confirm("Would you like uppercase letters?");
+var confirmUpperCase = confirm("Would you like uppercase letters?"); 
   if (confirmUpperCase) {
       passwordchoice += confirmUpperCase
   } else {
@@ -60,7 +55,22 @@ if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSymbols
   alert("You are required to pick a field of charcter");
 }
 
+var password = "";
+for (var i = 0; i < characters; i++) {
+  password =+ passwordchoice[Math.floor(Math.random() * passwordchoice.length)];
+}
 
+
+console.log(passwordchoice);
+
+// Write password to the #password input
+function writePassword() {
+
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
