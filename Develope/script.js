@@ -42,14 +42,14 @@ var confirmLowerCase = confirm("Would you like lowercase letters?");
     passwordchoice
   }
 
-var confirmNumbers = confirm("Would you like numbers");
+var confirmNumbers = confirm("Would you like numbers?");
   if (confirmNumbers) {
     passwordchoice += confirmNumbers
   } else {
     passwordchoice
   }
 
-var confirmSymbols = confirm("Would you liek symbols?");
+var confirmSymbols = confirm("Would you like symbols?");
   if (confirmSymbols) {
     passwordchoice += confirmSymbols
   } else {
