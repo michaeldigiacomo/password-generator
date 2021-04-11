@@ -24,6 +24,8 @@ var passwordchoice = "";
     } 
    } 
 
+function startPassword() {
+   
 var confirmUpperCase = confirm("Would you like uppercase letters?"); 
   if (confirmUpperCase) {
       passwordchoice += confirmUpperCase
@@ -51,7 +53,7 @@ var confirmSymbols = confirm("Would you like symbols?");
   } else {
     passwordchoice
   }
-
+}
 
 if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSymbols) {
   alert("You are required to pick a field of charcter");
