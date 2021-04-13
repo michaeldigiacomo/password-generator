@@ -1,8 +1,3 @@
-// Assignment Code
-
-// var generatePassword = document.querySelector("#generate");
-
-// function generatePassword() {
 
 var generateBtn = document.querySelector("#generate");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
