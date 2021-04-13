@@ -5,8 +5,11 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz".split();
 var numbers = "1234567890".split();
 var symbols = "!#$%&'()<=^_`{|}~*+]>?@[,-./:;".split();
 var passwordchoice = "";
+var array = [];
+var length = 0;
 
-  function userpasswordOptions(){
+function startPassword() {
+
     var passLength = parseInt(window.prompt("How long would you like your password to be?"));
     
     if (isNaN(passLength) === true) {
@@ -17,9 +20,9 @@ var passwordchoice = "";
       alert("Password must be at least 8 characters and no more than 128 characters");
       return; 
     } 
-   } 
+    
 
-function startPassword() {
+
    
 var confirmUpperCase = confirm("Would you like uppercase letters?"); 
   if (confirmUpperCase) {
