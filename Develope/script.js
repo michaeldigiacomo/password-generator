@@ -1,5 +1,5 @@
 var generateBtn = document.querySelector("#generate");
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
 var lowercase = "abcdefghijklmnopqrstuvwxyz".split();
 var numbers = "1234567890".split();
 var symbols = "!#$%&'()<=^_`{|}~*+]>?@[,-./:;".split();
@@ -8,8 +8,7 @@ var array = [];
 var length = 0;
 
 function startPassword() {
-  
-  var startQuestion = confirm("Would you like to create a password?")
+  var startQuestion = confirm("Would you like to create a password?");
   console.log(startQuestion);
 
   var passLength = parseInt(
@@ -24,19 +23,19 @@ function startPassword() {
     alert(
       "Password must be at least 8 characters and no more than 128 characters"
     );
-    return;
+    return "Password must be at least 8 characters and no more than 128 characters";
   }
 
-  var confirmUpperCase = confirm("Would you like uppercase letters?");
-  if (confirmUpperCase) {
-    passwordchoice += confirmUpperCase;
+  var confirmUppercase = confirm("Would you like uppercase letters?");
+  if (confirmUppercase) {
+    passwordchoice += confirmUppercase;
   } else {
     passwordchoice;
   }
 
-  var confirmLowerCase = confirm("Would you like lowercase letters?");
-  if (confirmLowerCase) {
-    passwordchoice += confirmLowerCase;
+  var confirmLowercase = confirm("Would you like lowercase letters?");
+  if (confirmLowercase) {
+    passwordchoice += confirmLowercase;
   } else {
     passwordchoice;
   }
@@ -56,23 +55,34 @@ function startPassword() {
   }
 }
 
-if (
-  !confirmUpperCase &&
-  !confirmLowerCase &&
-  !confirmNumbers &&
-  !confirmSymbols
-) {
-  alert("You are required to pick a field of charcter");
-}
-
 var password = "";
+
+  if (confirmUppercase) {
+    array += uppercase
+  }
+  if (confirmLowercase) {
+    array += lowercase
+  }
+  if (confirmNumbers) {
+    array += numbers
+  }
+  if (confirmSymbols) {
+    array += symbols
+  }
+  console.log(array);
+
+  // alert("You are required to pick a field of charcter");
+
+
 for (var i = 0; i < characters; i++) {
-  password = +passwordchoice[Math.floor(Math.random() * passwordchoice.length)];
+  var number = Math.floor(Math.random() * array.length);
 }
 
 console.log(passwordchoice);
 
 // Write password to the #password input
+generateBtn.addEventListener("click", writePassword);
+
 function writePassword() {
   var password = generatePassword();
 
@@ -80,26 +90,3 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// After that prompt, we need a check to make sure they chose between 8- 128 characters
-
-// Next we will prompt them for what characters they want. Will be a confirm prompt for all 4.
-
-// need to make sure that the user picked at least one character type for password.
-
-// We now need an object to store the user input- meaning the length, what characters will be used in password.
-
-// we will now return the object- we will now know what will be the possible choices.
-
-//After we have user inputs, we want to write a function to randomize the letters inside that we can give the password  (will use math.random to generate that).
-
-// Then we will creat another function- make an array w the results, an array for possible characters,
-// and set an array for guarenteed characters (characters guarenteed for pw)
-
-// then we will creat a loop that goes through the results array- (need to look up push and join)
-// Once we push into a new array (results array), using join we will take the characters from results array and turn into a string
-
-// After we turn into a string, we write the password to the page using(.value)
