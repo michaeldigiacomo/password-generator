@@ -1,4 +1,3 @@
-
 var generateBtn = document.querySelector("#generate");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
 var lowercase = "abcdefghijklmnopqrstuvwxyz".split();
@@ -9,57 +8,66 @@ var array = [];
 var length = 0;
 
 function startPassword() {
+  
+  var startQuestion = confirm("Would you like to create a password?")
+  console.log(startQuestion);
 
-    var passLength = parseInt(window.prompt("How long would you like your password to be?"));
-    
-    if (isNaN(passLength) === true) {
-        alert("Password length must be provided as a number")
-    };
+  var passLength = parseInt(
+    window.prompt("How long would you like your password to be?")
+  );
 
-    if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
-      alert("Password must be at least 8 characters and no more than 128 characters");
-      return; 
-    } 
-    
+  if (isNaN(passLength) === true) {
+    alert("Password length must be provided as a number");
+  }
 
+  if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
+    alert(
+      "Password must be at least 8 characters and no more than 128 characters"
+    );
+    return;
+  }
 
-   
-var confirmUpperCase = confirm("Would you like uppercase letters?"); 
+  var confirmUpperCase = confirm("Would you like uppercase letters?");
   if (confirmUpperCase) {
-      passwordchoice += confirmUpperCase
+    passwordchoice += confirmUpperCase;
   } else {
-    passwordchoice
-}
+    passwordchoice;
+  }
 
-var confirmLowerCase = confirm("Would you like lowercase letters?");
+  var confirmLowerCase = confirm("Would you like lowercase letters?");
   if (confirmLowerCase) {
-      passwordchoice += confirmLowerCase
+    passwordchoice += confirmLowerCase;
   } else {
-    passwordchoice
+    passwordchoice;
   }
 
-var confirmNumbers = confirm("Would you like numbers?");
+  var confirmNumbers = confirm("Would you like numbers?");
   if (confirmNumbers) {
-    passwordchoice += confirmNumbers
+    passwordchoice += confirmNumbers;
   } else {
-    passwordchoice
+    passwordchoice;
   }
 
-var confirmSymbols = confirm("Would you like symbols?");
+  var confirmSymbols = confirm("Would you like symbols?");
   if (confirmSymbols) {
-    passwordchoice += confirmSymbols
+    passwordchoice += confirmSymbols;
   } else {
-    passwordchoice
+    passwordchoice;
   }
 }
 
-if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSymbols) {
+if (
+  !confirmUpperCase &&
+  !confirmLowerCase &&
+  !confirmNumbers &&
+  !confirmSymbols
+) {
   alert("You are required to pick a field of charcter");
 }
 
 var password = "";
 for (var i = 0; i < characters; i++) {
-  password =+ passwordchoice[Math.floor(Math.random() * passwordchoice.length)];
+  password = +passwordchoice[Math.floor(Math.random() * passwordchoice.length)];
 }
 
 console.log(passwordchoice);
@@ -78,36 +86,20 @@ generateBtn.addEventListener("click", writePassword);
 
 // After that prompt, we need a check to make sure they chose between 8- 128 characters
 
-
-
 // Next we will prompt them for what characters they want. Will be a confirm prompt for all 4.
-
-
 
 // need to make sure that the user picked at least one character type for password.
 
-
-
 // We now need an object to store the user input- meaning the length, what characters will be used in password.
-
-
 
 // we will now return the object- we will now know what will be the possible choices.
 
-
-
 //After we have user inputs, we want to write a function to randomize the letters inside that we can give the password  (will use math.random to generate that).
 
-
-
-// Then we will creat another function- make an array w the results, an array for possible characters, 
+// Then we will creat another function- make an array w the results, an array for possible characters,
 // and set an array for guarenteed characters (characters guarenteed for pw)
-
-
 
 // then we will creat a loop that goes through the results array- (need to look up push and join)
 // Once we push into a new array (results array), using join we will take the characters from results array and turn into a string
-
-
 
 // After we turn into a string, we write the password to the page using(.value)
