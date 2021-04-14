@@ -15,15 +15,14 @@ function startPassword() {
     window.prompt("How long would you like your password to be?")
   );
 
-  if (isNaN(passLength) === true) {
-    alert("Password length must be provided as a number");
-  }
-
   if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
     alert(
       "Password must be at least 8 characters and no more than 128 characters"
     );
     return "Password must be at least 8 characters and no more than 128 characters";
+  } 
+  else {
+    length += passLength;
   }
 
   var confirmUppercase = confirm("Would you like uppercase letters?");
@@ -57,22 +56,21 @@ function startPassword() {
 
 var password = "";
 
-  if (confirmUppercase) {
-    array += uppercase
-  }
-  if (confirmLowercase) {
-    array += lowercase
-  }
-  if (confirmNumbers) {
-    array += numbers
-  }
-  if (confirmSymbols) {
-    array += symbols
-  }
-  console.log(array);
+if (confirmUppercase) {
+  array += uppercase;
+}
+if (confirmLowercase) {
+  array += lowercase;
+}
+if (confirmNumbers) {
+  array += numbers;
+}
+if (confirmSymbols) {
+  array += symbols;
+}
+console.log(array);
 
-  // alert("You are required to pick a field of charcter");
-
+// alert("You are required to pick a field of charcter");
 
 for (var i = 0; i < characters; i++) {
   var number = Math.floor(Math.random() * array.length);
