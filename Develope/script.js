@@ -1,4 +1,5 @@
 var generateBtn = document.querySelector("#generate");
+
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "1234567890";
@@ -8,7 +9,8 @@ var array = [];
 var length = 0;
 
 function startPassword() {
-  var startQuestion = confirm("Would you like to create a password?");
+
+  var startQuestion = confirm("Would you like to create a password?"); {
   console.log(startQuestion);
 
   var passLength = parseInt(
@@ -52,7 +54,7 @@ function startPassword() {
   } else {
     passwordchoice;
   }
-}
+
 
 var password = "";
 
@@ -70,19 +72,24 @@ if (confirmSymbols) {
 }
 console.log(array);
 
-alert("You are required to pick a field of charcter");
 
 for (var i = 0; i < characters; i++) {
   var number = Math.floor(Math.random() * array.length);
+  password += array[number];
 }
 
-console.log(passwordchoice);
+return password;
+
+
+}
+}
 
 // Write password to the #password input
 generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
-  var password = generatePassword();
+
+  var password = startPassword();
 
   var passwordText = document.querySelector("#password");
 
