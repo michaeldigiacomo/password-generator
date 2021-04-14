@@ -73,7 +73,7 @@ if (confirmSymbols) {
 console.log(array);
 
 
-for (var i = 0; i < characters; i++) {
+for (var i = 0; i < length; i++) {
   var number = Math.floor(Math.random() * array.length);
   password += array[number];
 }
