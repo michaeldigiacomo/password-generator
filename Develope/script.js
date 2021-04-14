@@ -1,8 +1,8 @@
 var generateBtn = document.querySelector("#generate");
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
-var lowercase = "abcdefghijklmnopqrstuvwxyz".split();
-var numbers = "1234567890".split();
-var symbols = "!#$%&'()<=^_`{|}~*+]>?@[,-./:;".split();
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var numbers = "1234567890";
+var symbols = "!#$%&'()<=^_`{|}~*+]>?@[,-./:;";
 var passwordchoice = "";
 var array = [];
 var length = 0;
@@ -70,7 +70,7 @@ if (confirmSymbols) {
 }
 console.log(array);
 
-// alert("You are required to pick a field of charcter");
+alert("You are required to pick a field of charcter");
 
 for (var i = 0; i < characters; i++) {
   var number = Math.floor(Math.random() * array.length);
